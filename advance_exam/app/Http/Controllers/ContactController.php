@@ -11,4 +11,12 @@ class ContactController extends Controller
     {
         return view('contacts.index');
     }
+    public function confirm(Request $request)
+    {
+
+    }
+    public function send(Request $request)
+    {
+        
+    }
 }

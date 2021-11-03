@@ -4,6 +4,43 @@
 html {
     font-size: 100%;
 }
+* {
+    box-sizing: border-box;
+}
+body {
+    color: #333;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
 a {
     text-decoration: none;
+}
+
+.contact {
+    width: 960px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+.contact-ttl {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.contact-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.contact-item,
+.contact-body {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.contact-item {
+    text-align: left;
+    width: 30%;
+    background-color: #eee;
+}
+.contact-body {
+    width: 70%;
 }
