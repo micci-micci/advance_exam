@@ -28,7 +28,7 @@ class ContactRequest extends FormRequest
             'last_name' => 'required',
             'first_name' => 'required',
             'gender' => 'required',
-            'mail' => 'required',
+            'email' => 'required',
             'postcode' => 'required',
             'address' => 'required',
             'building_name' => 'required',
@@ -42,11 +42,11 @@ class ContactRequest extends FormRequest
             'last_name' => '苗字は必須です',
             'first_name' => '名前は必須です',
             'gender' => '性別は必須です',
-            'mail' => 'メールアドレスは必須です',
+            'email' => 'メールアドレスは必須です',
             'postcode' => '郵便番号は必須です',
             'address' => '住所は必須です',
             'opinion' => 'ご意見は必須です',
             'opinion.max' => ':max 文字以内で入力してください',
-        ]
+        ];
     }
 }
