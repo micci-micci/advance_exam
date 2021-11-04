@@ -6,6 +6,7 @@
     <title>{{ $title }}</title>
     <link rel="stylesheet" href="http://localhost:8000/css/reset.css">
     <link rel="stylesheet" href="http://localhost:8000/css/style.css">
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 </head>
 <body>
     {{ $slot }}

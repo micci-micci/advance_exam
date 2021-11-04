@@ -38,9 +38,30 @@ a {
 
 .contact-item {
     text-align: left;
+    vertical-align: top;
     width: 30%;
     background-color: #eee;
 }
 .contact-body {
     width: 70%;
+}
+.btn {
+    display: block;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #fff;
+    background-color: #0099ff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.contact-example-txt {
+    font-size: 12px;
+    color: #A9A9A9;
+    margin-top: 5px
+}
+
+.error {
+    color: red;
+    font-size: 14px;
 }

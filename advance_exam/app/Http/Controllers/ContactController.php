@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
 
+
 class ContactController extends Controller
 {
     public function index()
@@ -16,7 +17,11 @@ class ContactController extends Controller
     {
         $contact = $request->all();
 
-        return view('contacts.confirm', $contact);
+        if (isset($contact['postcode']))
+            $contact['postcode'] = mb_convert_kana($contact['postcode'], 'a');
+
+        return view('contacts.confirm')
+            ->with(['contact' => $contact]);
     }
     public function send(Request $request)
     {
