@@ -63,7 +63,7 @@
                 <th>メールアドレス</th>
                 <th>ご意見</th>
             </tr>
-
+            {{$contacts->appends(request()->query())->links()}}
             @foreach ($contacts as $contact)
             <tr>
                 <td>
@@ -93,6 +93,7 @@
             </tr>
             @endforeach
         </table>
+
         @else
             <p>データがみつかりません</p>
         @endif

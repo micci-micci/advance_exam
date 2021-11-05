@@ -26,7 +26,8 @@ class AdminController extends Controller
             $query->where($key, 'like', '%'.$value.'%');
         }
 
-        $contacts = $query->get();
+        $contacts = $query->Paginate(10);
+
         dump($contacts);
 
         return view('admins.index')

@@ -117,3 +117,6 @@ a {
     cursor: pointer;
     border-radius: 5px;
 }
+.pagination {
+    justify-content: right;
+}
