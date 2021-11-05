@@ -45,7 +45,7 @@ a {
 .contact-body {
     width: 70%;
 }
-.btn {
+.contact-btn {
     display: block;
     margin: 0 auto;
     font-size: 12px;
@@ -60,8 +60,18 @@ a {
     color: #A9A9A9;
     margin-top: 5px
 }
+.contact-txt {
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+    font-size: 10px;
+    color: #000;
+    text-decoration-line: underline;
+    border: none;
+    background: none;
+}
 
 .error {
-    color: red;
+    color: #000;
     font-size: 14px;
 }

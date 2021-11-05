@@ -17,14 +17,15 @@ class ContactController extends Controller
     {
         $contact = $request->all();
 
-        if (isset($contact['postcode']))
-            $contact['postcode'] = mb_convert_kana($contact['postcode'], 'a');
-
         return view('contacts.confirm')
             ->with(['contact' => $contact]);
     }
     public function send(Request $request)
     {
+        if ($request->get('back')) {
+            return redirect('/')->withInput();
+        }
+
         $contact = new Contact();
         $contact->fullname = $request->fullname;
         $contact->gender = $request->gender;

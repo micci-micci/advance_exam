@@ -25,11 +25,11 @@
                     <th class="contact-item">性別</th>
                     <td class="contact-body">
                         <label class="contact-gender">
-                            <input type="radio" name=gender value="0" id="default" {{ old('gender','default') == 'default' ? 'checked' : '' }}>
+                            <input type="radio" name=gender value="0" id="default" {{ old('gender','0') == '0' ? 'checked' : '' }}>
                             <span class="contact-gender-txt">男性</span>
                         </label>
                         <label class="contact-gender">
-                            <input type="radio" name=gender value="1">
+                            <input type="radio" name=gender value="1" id="default" {{ old('gender','1') == '1' ? 'checked' : '' }}>
                             <span class="contact-gender-txt">女性</span>
                         </label>
                         @error('gender')
@@ -79,14 +79,14 @@
                 <tr>
                     <th class="contact-item">ご意見</th>
                     <td class="contact-body">
-                        <textarea name="opinion" cols="30" rows="10" value="{{ old('opinion') }}"></textarea>
+                        <textarea name="opinion" cols="30" rows="10" value="opinion">{{ old('opinion') }}</textarea>
                         @error('opinion')
                             <div class="error">{{ $message }}</div>
                         @enderror
                     </td>
                 </tr>
             </table>
-            <input type="submit" class="btn" value="確認">
+            <input type="submit" class="contact-btn" value="確認">
         </form>
     </div>
 </x-layout>

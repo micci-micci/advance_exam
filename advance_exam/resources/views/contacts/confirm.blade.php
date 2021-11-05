@@ -20,7 +20,11 @@
                 <tr>
                     <th class="contact-item">性別</th>
                     <td class="contact-body">
-                        <span>{{ $contact['gender'] }}</span>
+                        @if ($contact['gender']==='0')
+                            <span>男性</span>
+                        @else
+                            <span>女性</span>
+                        @endif
                     </td>
                 </tr>
                 <tr>
@@ -54,8 +58,8 @@
                     </td>
                 </tr>
             </table>
-            <input type="submit" class="btn" value="送信">
-            <a href="{{ route('contacts.index') }}>修正する</a>
+            <input type="submit" class="contact-btn" value="送信">
+            <input type="submit" name="back" class="contact-txt" value="修正する">
         </form>
     </div>
 </x-layout>
