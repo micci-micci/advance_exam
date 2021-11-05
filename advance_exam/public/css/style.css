@@ -45,7 +45,7 @@ a {
 .contact-body {
     width: 70%;
 }
-.contact-btn {
+/* .contact-btn {
     display: block;
     margin: 0 auto;
     font-size: 12px;
@@ -54,6 +54,20 @@ a {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+} */
+.contact-btn {
+    display: block;
+    font-weight: bold;
+    width: 100px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    background-color: #333;
+    color: #fff;
+}
+.contact-btn:hover {
+    background-color: #fff;
+    border-color: #59b1eb;
+    color: #59b1eb;
 }
 .contact-example-txt {
     font-size: 12px;
@@ -70,8 +84,7 @@ a {
     border: none;
     background: none;
 }
-
 .error {
-    color: #000;
+    color: red;
     font-size: 14px;
 }

@@ -25,11 +25,11 @@
                     <th class="contact-item">性別</th>
                     <td class="contact-body">
                         <label class="contact-gender">
-                            <input type="radio" name=gender value="0" id="default" {{ old('gender','0') == '0' ? 'checked' : '' }}>
+                            <input type="radio" name=gender value="0" id="0" {{ old('gender','0') == '0' ? 'checked' : '' }}>
                             <span class="contact-gender-txt">男性</span>
                         </label>
                         <label class="contact-gender">
-                            <input type="radio" name=gender value="1" id="default" {{ old('gender','1') == '1' ? 'checked' : '' }}>
+                            <input type="radio" name=gender value="1">
                             <span class="contact-gender-txt">女性</span>
                         </label>
                         @error('gender')
