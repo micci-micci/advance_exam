@@ -18,7 +18,7 @@
                         <th class="admin-item">性別</th>
                         <td class="admin-body">
                             <label class="contact-gender">
-                                <input type="radio" name=gender value="2"  {{ old('gender','0') == '0' ? 'checked' : '' }} >
+                                <input type="radio" name=gender value=""  {{ old('gender','0') == '0' ? 'checked' : '' }} >
                                 <span class="contact-gender-txt">全て</span>
                             </label>
                             <label class="contact-gender">
