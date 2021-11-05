@@ -63,6 +63,11 @@
                 <th>メールアドレス</th>
                 <th>ご意見</th>
             </tr>
+
+            <p>全{{ $contacts->total() }}件中
+            {{ ($contacts->currentPage() -1) * $contacts->perPage() + 1}} - 
+            {{ (($contacts->currentPage() -1) * $contacts->perPage() + 1) + (count($contacts) -1)  }}件</p>
+
             {{$contacts->appends(request()->query())->links()}}
             @foreach ($contacts as $contact)
             <tr>
