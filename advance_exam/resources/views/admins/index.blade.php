@@ -34,13 +34,13 @@
                     <tr>
                         <th class="admin-item">登録日</th>
                         <td class="admin-body">
-                            <input type="text" name="from" class="form-text" value="{{ old('from_date') }}">
+                            <input type="date" name="created_at" class="form-text" value="{{ old('created_at') }}">
                         </td>
                         <td>
                             <span> ~ </span>
                         </td>
                         <td class="admin-body">
-                            <input type="text" name="until" class="form-text" value="{{ old('until_date') }}">
+                            <input type="date" name="created_at" class="form-text" value="{{ old('created_at') }}">
                         </td>
                     </tr>
                     <tr>
@@ -55,7 +55,7 @@
             </form>
         </div>
         <table>
-            @if(!empty($contacts))
+
             <tr>
                 <th>ID</th>
                 <th>お名前</th>
@@ -63,10 +63,13 @@
                 <th>メールアドレス</th>
                 <th>ご意見</th>
             </tr>
-
-            <p>全{{ $contacts->total() }}件中
-            {{ ($contacts->currentPage() -1) * $contacts->perPage() + 1}} - 
-            {{ (($contacts->currentPage() -1) * $contacts->perPage() + 1) + (count($contacts) -1)  }}件</p>
+            @if (count($contacts) >0)
+                <p>全{{ $contacts->total() }}件中
+                {{ ($contacts->currentPage() -1) * $contacts->perPage() + 1}} - 
+                {{ (($contacts->currentPage() -1) * $contacts->perPage() + 1) + (count($contacts) -1)  }}件</p>
+            @else
+                <p>データがみつかりません</p>
+            @endif
 
             {{$contacts->appends(request()->query())->links()}}
             @foreach ($contacts as $contact)
@@ -78,14 +81,16 @@
                     <p>{{ $contact->fullname }}</p>
                 </td>
                 <td>
-                    <p>{{ $contact->gender }}</p>
+                    @if($contact->gender===0) 男性 @else 女性 @endif
                 </td>
                 <td>
                     <p>{{ $contact->email }}</p>
                 </td>
-                <td>
-                    <p>{{ $contact->opinion }}</p>
+                <td class="opinion">
+                    <p>{{Str::limit($contact->opinion, 25, '…' )}}</p>
+                    <p class="opinion-all">{{ $contact->opinion }}</p>
                 </td>
+
                 <form method="post" action="{{ route('admins.destroy') }}" id="delete_post">
                     @method('DELETE')
                     @csrf
@@ -98,10 +103,6 @@
             </tr>
             @endforeach
         </table>
-
-        @else
-            <p>データがみつかりません</p>
-        @endif
     </div>
 
     <script>
@@ -116,7 +117,6 @@
             }
 
             e.target.submit();
-            })
-        }
+        })
     </script>
 </x-layout>

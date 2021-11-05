@@ -28,7 +28,7 @@ class AdminController extends Controller
 
         $contacts = $query->Paginate(10);
 
-        dump($contacts);
+        // dump($contacts);
 
         return view('admins.index')
             ->with(['contacts' => $contacts]);

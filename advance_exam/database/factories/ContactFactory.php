@@ -21,7 +21,7 @@ class ContactFactory extends Factory
             'postcode' => $this->faker->postcode,
             'address' => $this->faker->address,
             'building_name' => $this->faker->city,
-            'opinion' => $this->faker->randomLetter(1,120),
+            'opinion' => $this->faker->realText(100),
             'created_at' => $this->faker->datetime($max = 'now', $timezone = date_default_timezone_get()),
             'updated_at' => $this->faker->datetime($max = 'now', $timezone = date_default_timezone_get()),
         ];
