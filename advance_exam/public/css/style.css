@@ -123,10 +123,10 @@ a {
 .opinion {
     position   : relative;
 }
-.opinion:hover .opinion-all {
+.opinion:hover .opinion-balloon {
     display: inline;
 }
-.opinion-all {
+.opinion-balloon {
     position: absolute;
     display: none;
     padding: 1px;
@@ -135,7 +135,7 @@ a {
     left : 80%;
     font-size: 80%;
 }
-.opinion-all:after{
+.opinion-balloon:after{
     position: absolute;
     /* border-top: 10px solid transparent;
     border-bottom: 10px solid transparent; */

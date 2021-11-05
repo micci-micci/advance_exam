@@ -88,7 +88,7 @@
                 </td>
                 <td class="opinion">
                     <p>{{Str::limit($contact->opinion, 25, '…' )}}</p>
-                    <p class="opinion-all">{{ $contact->opinion }}</p>
+                    <p class="opinion-balloon">{{ $contact->opinion }}</p>
                 </td>
 
                 <form method="post" action="{{ route('admins.destroy') }}" id="delete_post">
